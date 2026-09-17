@@ -1,0 +1,71 @@
+/* Next-specific CSS fixes. Nothing template-owned goes in here, and main.css
+   stays untouched - this file is the only place where the port deviates from
+   the Arigo stylesheets.
+
+   wow.js was a blocking script that hid every .wow box at DOMContentLoaded,
+   before the first paint. ScrollReveal can only do that once React hydrates, so
+   the server-rendered HTML would otherwise paint the boxes visible for a frame
+   before they are hidden and animated in. Hiding them in CSS restores the
+   template's behaviour; ScrollReveal sets visibility:visible on reveal. */
+.wow {
+  visibility: hidden;
+}
+
+/* not-found.js promotes the template's <h2> to the page's <h1>: error.html had
+   no h1 at all, and a 404 rendered inside the shared shell would otherwise be
+   the one route in the port with no top-level heading. Only the element name
+   changed, so the sizing the h2 brought with it is restated here.
+
+   The font-size steps come from `.error-section .error-content h2` in main.css
+   (64px, 44px below 991, 36px below 575). The line-height does not - it came
+   from the base `.fs-two, h2` rule, which the h1 never matches; the base `h1`
+   uses fixed px line-heights that step down per breakpoint instead, so 116% is
+   pinned here at every width. Everything else - family, colour, margin,
+   padding, transition, weight - is shared by the h1-h6 block in main.css and
+   needs no restating. */
+.error-section .error-content h1 {
+  font-size: 64px;
+  line-height: 116%;
+  font-weight: 700;
+}
+@media (max-width: 991px) {
+  .error-section .error-content h1 {
+    font-size: 44px;
+  }
+}
+@media (max-width: 575px) {
+  .error-section .error-content h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+}
+
+/* The offcanvas panel's "Contact Info" label was an <h4> in the template: a
+   heading that labels nothing, appearing before every page's <h1> because the
+   panel is mounted at the top of the shared shell. It is a <div> now, so the
+   styling it used to get from the h4 element is restated here - the h1-h6 block
+   plus the font-size steps of `.fs-four, h4`, all from main.css.
+
+   font-weight is deliberately absent: the element still carries .fw_600, which
+   outranked the h4 element rules before and governs the weight unchanged now.
+   These selectors are more specific than .fw_600, so declaring it here would
+   silently take that over. */
+.offcanvas__wrapper .offcanvas__content .offcanvas__contact .offcanvas__contact-title {
+  font-family: var(--font-phudu), sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #02090F;
+  transition: all 0.4s ease-in-out;
+  font-size: 24px;
+  line-height: 130%;
+}
+@media (max-width: 1399px) {
+  .offcanvas__wrapper .offcanvas__content .offcanvas__contact .offcanvas__contact-title {
+    font-size: 22px;
+  }
+}
+@media (max-width: 1199px) {
+  .offcanvas__wrapper .offcanvas__content .offcanvas__contact .offcanvas__contact-title {
+    font-size: 20px;
+  }
+}
