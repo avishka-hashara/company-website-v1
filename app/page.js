@@ -14,7 +14,7 @@ import { pageMetadata, OG_IMAGE, SITE_URL } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   description:
-    "Smart technology and AI for Sri Lankan businesses. We help you get online, run on proper systems, stay compliant with new tax rules, and deploy trilingual AI agents.",
+    "Arigo is a creative marketing studio delivering brand strategy, web development and performance campaigns that help ambitious brands scale up much faster.",
   path: "/",
 });
 
@@ -94,7 +94,7 @@ export default function Home() {
             <div className="col-lg-12">
               <div className="banner-content z-1 position-relative">
                 <div className="content-head" data-wow-delay="0.7s">
-                  <h1>Smart Tech</h1>
+                  <h1>Marketing</h1>
                   <img
                     src="/assets/img/banner/video-shape.png"
                     alt="img"
@@ -105,21 +105,21 @@ export default function Home() {
                       href="/service"
                       className="arrow_in fs--18px text-white d-flex gap-2"
                     >
-                      Trilingual AI Agents
+                      UX/UI Design
                       <i className="fa-solid fa-arrow-right"></i>
                     </Link>
                     <Link
-                      href="/service"
+                      href="/about"
                       className="arrow_in fs--18px text-white d-flex gap-2"
                     >
-                      Web &amp; E-Commerce
+                      Brand Identity
                       <i className="fa-solid fa-arrow-right"></i>
                     </Link>
                     <Link
-                      href="/service"
+                      href="/project"
                       className="arrow_in fs--18px text-white d-flex gap-2"
                     >
-                      VAT &amp; Business Systems
+                      Web Development
                       <i className="fa-solid fa-arrow-right"></i>
                     </Link>
                   </div>
@@ -131,16 +131,15 @@ export default function Home() {
                     className="tree-icon d-sm-block d-none"
                   />
                   <div className="cont">
-                    <h2 className="mb-lg-4 mb-3 pb-xxl-1">&amp; AI Partner</h2>
+                    <h2 className="mb-lg-4 mb-3 pb-xxl-1">studio</h2>
                     <p className="text-white opacity-75 mb-48">
-                      We help Sri Lankan businesses get online, run on proper
-                      systems, stay compliant with new tax rules, and deploy AI
-                      agents that reply to your customers in Sinhala, Tamil and
-                      English, 24 hours a day.
+                      Data-driven strategies, creative campaigns, and measurable
+                      results that help your business scale faster. Data-driven
+                      strategies, creative campaigns,Data-driven strategies,
                     </p>
                     <Link href="/contact" className="touch d-center">
                       <span className="text-center">
-                        Free Health <br /> Check <br />
+                        Get In Touch <br />
                         <i className="fa-solid fa-arrow-right"></i>
                       </span>
                     </Link>
@@ -148,8 +147,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="fs-20px text-white opacity-75 lh-base">
-                Trilingual Support &bull; Monthly Plans from LKR 6,500 <br />
-                Built &amp; Supported in Sri Lanka
+                We Deliver Performance-Focused Digital <br /> Marketing
+                Solutions.
               </div>
               <div className="hero-social-area3">
                 <img
